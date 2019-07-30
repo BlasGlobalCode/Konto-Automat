@@ -24,7 +24,7 @@ public class KontoAutomat {
 		 System.out.println(df.format(aktuell.getTime()));
 		////////////////// Datei Pfad //////////////////
 		
-//		String dateiName ="C:\\Users\\difo\\Desktop\\GelöstenAufgabenPdf\\KontoDaten"; ///// Datei Pfad
+//		String dateiName ="pfad"; ///// Datei Pfad
 		Scanner sc = new Scanner(System.in);
 		System.out.println();
 		System.out.println("************************************************");
@@ -34,7 +34,7 @@ public class KontoAutomat {
 		System.out.println("Willkommen! Bitte geben sie Ihren Kontoname ein: ");
 		Benutzereingabe = sc.next();
 		
-		File file = new File("C:\\Users\\difo\\Desktop\\GelöstenAufgabenPdf\\KontoDaten", Benutzereingabe +".txt"); ////
+		File file = new File("pfad", Benutzereingabe +".txt"); ////
 		
 		if(!file.isFile()) { 	//ob BenutzerKonto nicht vorhanden
 			
@@ -51,7 +51,7 @@ public class KontoAutomat {
 			System.out.println("Sie sind als " + Benutzereingabe.toUpperCase() + " angemeldet :)");
 			System.out.println();
 			
-				Scanner filescanner= new Scanner (file); // Ermöglicht das Lesen des Files
+				Scanner filescanner= new Scanner (file); // ErmÃ¶glicht das Lesen des Files
 						
 		do {
 				
@@ -63,11 +63,11 @@ public class KontoAutomat {
 		filescanner.close();
 		
 		////////////Auswahl    //////////////////
-		System.out.println("Kontostand anzeigen ? Drücke 1");
+		System.out.println("Kontostand anzeigen ? DrÃ¼cke 1");
 		System.out.println();
-		System.out.println("Geld einzahlen ? Drücke 2");
+		System.out.println("Geld einzahlen ? DrÃ¼cke 2");
 		System.out.println();
-		System.out.println("Geld auszahlen ? Drücke 3");
+		System.out.println("Geld auszahlen ? DrÃ¼cke 3");
 		System.out.println();
 		
 		int Auswahl; 
@@ -115,7 +115,7 @@ public class KontoAutomat {
 			
 			System.out.println("************************************************");
 			System.out.println(df.format(aktuell.getTime()));
-			 ////////      Bestätigung ///////////
+			 ////////      BestÃ¤tigung ///////////
 			
 			int KonverzierterStringKontoStandZuInt = Integer.parseInt(zeichnen);
 			
@@ -129,7 +129,7 @@ public class KontoAutomat {
 			System.out.println();
 			///////////  Ausgabe der Neuen Daten in die Datei Pfad
 
-			String Pfad = "C:\\\\Users\\\\difo\\\\Desktop\\\\GelöstenAufgabenPdf\\\\KontoDaten\\" + Benutzereingabe + ".txt"; /// SpeicherWeg Der Eingegebenen Daten
+			String Pfad = "pfad" + Benutzereingabe + ".txt"; /// SpeicherWeg Der Eingegebenen Daten
 			
 			String IhrAlterKontoStand = KonverzierterStringKontoStandZuInt + "";
 //			String IhrEingezahltesGeld =EinZahlSumme+"";
@@ -147,7 +147,7 @@ public class KontoAutomat {
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Das Geld wurde nicht eingezahlt !!!");
-				System.out.println("Überprüfene Sie Ihre Eingaben");
+				System.out.println("ÃœberprÃ¼fene Sie Ihre Eingaben");
 			}
 			
 		}
@@ -181,11 +181,11 @@ public class KontoAutomat {
 			///////////Daten Ausgabe in die Pfad Datei
 			
 			//				String Converter =rest+ "";
-				String Pfad = "C:\\\\Users\\\\difo\\\\Desktop\\\\GelöstenAufgabenPdf\\\\KontoDaten\\" + Benutzereingabe + ".txt"; /// SpeicherWeg Der Eingegebenen Daten
+				String Pfad = "pfad" + Benutzereingabe + ".txt"; /// SpeicherWeg Der Eingegebenen Daten
 								
-				System.out.println(IhrAlterKontoStand  + " €" + System.getProperty ("line.separator"));
-				System.out.println(AbgehebtesGeld  + " €" + System.getProperty ("line.separator"));
-				System.out.println(IhrNeuerKontoStand + " €");
+				System.out.println(IhrAlterKontoStand  + " â‚¬" + System.getProperty ("line.separator"));
+				System.out.println(AbgehebtesGeld  + " â‚¬" + System.getProperty ("line.separator"));
+				System.out.println(IhrNeuerKontoStand + " â‚¬");
 				
 				FileWriter fw = new FileWriter(Pfad); 
 				fw.write(IhrAlterKontoStand + System.getProperty("line.separator" ));
@@ -196,7 +196,7 @@ public class KontoAutomat {
 			{
 				System.out.println("Das Geld wurde nicht ausgezahlt !!!");
 				e.printStackTrace();
-				System.out.println("Überprüfene Sie Ihre Eingaben");
+				System.out.println("ÃœberprÃ¼fene Sie Ihre Eingaben");
 			}
 		}	
 	}	
